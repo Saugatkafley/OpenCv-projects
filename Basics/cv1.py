@@ -15,10 +15,16 @@ img_canny = cv2.Canny(img_blur, 40,40)                  # 40 ,40 is the threshol
 img_Dilate = cv2.dilate(img_canny, kernel, iterations=3)# dilate the image , iterations = how many times to dilate
 img_eroded = cv2.erode(img_Dilate , kernel , iterations  = 5) # erode the image , iterations = how many times to erode
 
-cv2.imshow("Blurred", img)
-cv2.imshow("Image Canny", img_canny)
-cv2.imshow("Image", img)
-cv2.imshow("Image Dilate", img_Dilate)
-cv2.imshow("Image_Gray", img_greyscale)
-cv2.imshow("Image_Eroded", img_eroded)
+hr  = np.hstack((img_greyscale , img_blur , img_canny , img_Dilate , img_eroded))
+cv2.resize(hr , (500,500))
+vr  = np.vstack((img_greyscale , img_blur , img_canny , img_Dilate , img_eroded))
+cv2.imshow("Horizontal stack" , hr)
+cv2.imshow("Vertical stack" , vr)
+
+# cv2.imshow("Blurred", img)
+# cv2.imshow("Image Canny", img_canny)
+# cv2.imshow("Image", img)
+# cv2.imshow("Image Dilate", img_Dilate)
+# cv2.imshow("Image_Gray", img_greyscale)
+# cv2.imshow("Image_Eroded", img_eroded)
 cv2.waitKey(0)
