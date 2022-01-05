@@ -2,7 +2,7 @@ import  cv2
 import numpy as np 
 import sys
 sys.path.append('Others')
-from Utils import *
+from Utils import *     # Thanks to Co-Pilot
 
 cap = cv2.VideoCapture(0)
 scale  = 0.8
