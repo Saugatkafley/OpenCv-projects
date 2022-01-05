@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-img  = cv2.imread('Resources/Cards.png')
+img = cv2.imread("Resources/Cards.png")
 width, height = 250,350 # width, height ratio of card is 2.5:3.5.
 # Points to warp from the picture
 pts = np.float32([   [111,219] ,
@@ -21,9 +21,7 @@ for x in range(4):
 # cv2.circle(img ,(pts[3][0] , pts[3][1]), 5, (0,0,0), cv2.FILLED)
 
 matrix =  cv2.getPerspectiveTransform(pts,pts1)
-print(matrix)
-output  = cv2.warpPerspective(img,matrix,(width,height))
-print(pts) 
+output  = cv2.warpPerspective(img , matrix,(width,height))
 cv2.imshow('Original Cards', img)
 cv2.imshow("Warped Cards", output)
 cv2.waitKey(0)
