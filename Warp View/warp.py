@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 img  = cv2.imread('Resources/Cards.png')
-width, height = 250,350
+width, height = 250,350 # width, height ratio of card is 2.5:3.5.
 # Points to warp from the picture
 pts = np.float32([   [111,219] ,
                    [284,190] , 
