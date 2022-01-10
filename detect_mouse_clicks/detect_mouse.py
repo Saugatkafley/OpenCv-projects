@@ -5,7 +5,7 @@ import numpy as np
 img_path = 'Resources/Cards.png'
 
 # Circles to store the coordinates of the detected circles
-Circles = np.zeros((4,2), np.float32)
+Circles = np.float32([[0,0],[0,0],[0,0],[0,0]])
 points = 0
 
 width , height = 250,350 # width, height ratio of card is 2.5:3.5.
@@ -18,12 +18,12 @@ def MousePoints(events , x,y ,flags , params):
     global points   # Global variable
     global pts1
     if events == cv2.EVENT_LBUTTONDOWN:
-        if points <4: # 4 points are required to warp the image    
-            Circles[points][0] = x
-            Circles[points][1] = y
-            points+= 1
-            print(Circles)
-        
+        # if points <4: # 4 points are required to warp the image    
+        Circles[points][0] = x
+        Circles[points][1] = y
+        points+= 1
+        print(Circles)
+    
     
 
 
@@ -32,13 +32,15 @@ img = cv2.imread(img_path)
 while True :
     
     if points == 4 : 
-        for i in Circles:
-            cv2.circle(img ,(int(i[0]) , int(i[1])), 5, (0,0,255), cv2.FILLED)
         matrix  = cv2. getPerspectiveTransform(Circles,pts1)
+        print("matrix" , matrix)
         output  = cv2.warpPerspective(img , matrix,(width,height))
         cv2.imshow("Warped Cards", output)
+        for i in Circles:
+            cv2.circle(img ,(int(i[0]) , int(i[1])), 5, (0,0,255), cv2.FILLED)
         
     cv2.imshow("Original", img)
     cv2.setMouseCallback("Original", MousePoints)
 
-    cv2.waitKey(0)
+    if cv2.waitKey(0) & 0xFF == ord('q'):
+            break
