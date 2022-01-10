@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 img_path = 'Resources/Cards.png'
-
+img_path1  = 'Resources/embeded_cover.jpg'
 # Circles to store the coordinates of the detected circles
 Circles = np.float32([[0,0],[0,0],[0,0],[0,0]])
 points = 0
@@ -27,14 +27,16 @@ def MousePoints(events , x,y ,flags , params):
     
 
 
-img = cv2.imread(img_path)
+img = cv2.imread(img_path1)
+# width , height = img.shape [1] , img.shape [0]
+img  = cv2.resize(img, (500,500))
 
 while True :
     
     if points == 4 : 
         matrix  = cv2. getPerspectiveTransform(Circles,pts1)
-        print("matrix" , matrix)
         output  = cv2.warpPerspective(img , matrix,(width,height))
+        # output = cv2.resize(output,(width , height))
         cv2.imshow("Warped Cards", output)
         for i in Circles:
             cv2.circle(img ,(int(i[0]) , int(i[1])), 5, (0,0,255), cv2.FILLED)
