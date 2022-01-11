@@ -45,4 +45,4 @@ while True :
     cv2.setMouseCallback("Original", MousePoints)
 
     if cv2.waitKey(0) & 0xFF == ord('q'):
-            break
+            break 
