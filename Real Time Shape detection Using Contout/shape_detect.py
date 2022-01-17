@@ -20,15 +20,26 @@ cv2.namedWindow("Parameters")
 cv2.resizeWindow("Parameters" , frameWidth , 80)
 cv2.createTrackbar("Threshold1", "Parameters" , 131 , 255 , empty) # 131 is the base value
 cv2.createTrackbar("Threshold2", "Parameters" , 202 , 255 , empty) # 202 is the base value
-
+cv2.createTrackbar("Area", "Parameters" , 1000 , 10000 , empty) # 1000 is the base value
 def getContours(img , imgContour):
     contours , hierarchy = cv2.findContours(img , cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_NONE)
     
     for cnt in contours:
         area  = cv2.contourArea(cnt)
-        if area > 2005:
+        areaMin = cv2.getTrackbarPos("Area", "Parameters")
+        if area > areaMin:
             cv2.drawContours(imgContour , cnt , -1 , (255,0,0) , 5)
-        
+            #perimenter 
+            peri = cv2.arcLength(cnt , True)
+            approx = cv2.approxPolyDP(cnt , 0.02 * peri , True) # 0.02 is the accuracy , True is closed contour , False is open contour
+            
+            print(approx)
+            print ("Points approx :" , len(approx))
+            x , y , w , h = cv2.boundingRect(approx) # x , y is the top left corner , w , h is the width and height
+            # Text markers
+            cv2.rectangle(imgContour , (x , y) , (x + w , y + h) , (0,255,0) , 2)
+            cv2.putText(imgContour ,"Points"+ str(len(approx)) , (x , y) , cv2.FONT_HERSHEY_COMPLEX , 0.5 , (0,0,255) , 2)
+            cv2.putText(imgContour ,"Area"+ str(area) , (x , y+50) , cv2.FONT_HERSHEY_COMPLEX , 0.5 , (0,0,255) , 2)
 while True:
     sucess ,img = cap.read()
     img_blur  = cv2.GaussianBlur(img , (5,5) , 1)
