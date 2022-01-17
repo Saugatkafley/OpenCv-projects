@@ -1,14 +1,14 @@
 import cv2
 import numpy as np
 import sys
-sys.path.append('Others')
-from Utils import *     # Thanks to Co-Pilot
-
+#For windows
+# sys.path.append("Others")
+sys.path.append("/media/saugat/4ACAC96DCAC955BB/Machine Learning/Murtaza OpenCv/Others") # For Linux
+from Utils import *
 frameWidth = 480
 frameHeight = 480
 
-
-cap  = cv2.VideoCapture(1)
+cap  = cv2.VideoCapture(0)
 # cap.set(3, frameWidth)
 # cap.set(4, frameHeight)
 
@@ -22,12 +22,16 @@ cv2.createTrackbar("Threshold1", "Parameters" , 131 , 255 , empty) # 131 is the 
 cv2.createTrackbar("Threshold2", "Parameters" , 202 , 255 , empty) # 202 is the base value
 
 def getContours(img , imgContour):
-
     contours , hierarchy = cv2.findContours(img , cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_NONE)
-    cv2.drawContours(imgContour , contours , -1 , (255,0,0) , 3)
+    
+    for cnt in contours:
+        area  = cv2.contourArea(cnt)
+        if area > 2005:
+            cv2.drawContours(imgContour , cnt , -1 , (255,0,0) , 5)
+        
 while True:
     sucess ,img = cap.read()
-    img_blur  = cv2.GaussianBlur(img,(7,7),1)
+    img_blur  = cv2.GaussianBlur(img , (5,5) , 1)
     img_gray  = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     
     threshold1 = cv2.getTrackbarPos("Threshold1", "Parameters")
