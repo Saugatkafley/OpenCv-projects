@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import sys
 #For windows
-# sys.path.append("Others")
-sys.path.append("/media/saugat/4ACAC96DCAC955BB/Machine Learning/Murtaza OpenCv/Others") # For Linux
+sys.path.append("Others")
+# sys.path.append("/media/saugat/4ACAC96DCAC955BB/Machine Learning/Murtaza OpenCv/Others") # For Linux
 from Utils import *
 frameWidth = 480
 frameHeight = 480
@@ -17,7 +17,7 @@ def empty(a):
 
 #Parameters for the contour detection
 cv2.namedWindow("Parameters")
-cv2.resizeWindow("Parameters" , frameWidth , 80)
+cv2.resizeWindow("Parameters" , frameWidth , 130)
 cv2.createTrackbar("Threshold1", "Parameters" , 131 , 255 , empty) # 131 is the base value
 cv2.createTrackbar("Threshold2", "Parameters" , 202 , 255 , empty) # 202 is the base value
 cv2.createTrackbar("Area", "Parameters" , 1000 , 10000 , empty) # 1000 is the base value
@@ -32,8 +32,6 @@ def getContours(img , imgContour):
             #perimenter 
             peri = cv2.arcLength(cnt , True)
             approx = cv2.approxPolyDP(cnt , 0.02 * peri , True) # 0.02 is the accuracy , True is closed contour , False is open contour
-            
-            print(approx)
             print ("Points approx :" , len(approx))
             x , y , w , h = cv2.boundingRect(approx) # x , y is the top left corner , w , h is the width and height
             # Text markers
