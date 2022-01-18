@@ -7,7 +7,7 @@ cap  = cv2.VideoCapture(0)
 cap.set(3, framewidth)
 cap.set(4, frameheight)
 
-cv2.TrackerMOSSE_create()
+tracker = cv2.TrackerMOSSE_create()
 
 while True:
     timer  = cv2.getTickCount()
