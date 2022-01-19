@@ -36,7 +36,7 @@ while True :
     if points == 4 : 
         matrix  = cv2. getPerspectiveTransform(Circles,pts1)
         output  = cv2.warpPerspective(img , matrix,(width,height))
-        # output = cv2.resize(output,(width , height))
+        output = cv2.resize(output,(width , height))
         cv2.imshow("Warped Cards", output)
         for i in Circles:
             cv2.circle(img ,(int(i[0]) , int(i[1])), 5, (0,0,255), cv2.FILLED)
