@@ -38,6 +38,7 @@ pip install -r requirements.txt
 ## Screenshots / Demos
 
 **Real Time Color** 
+
 ![Color Detection](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/real_time_color.gif?token=GHSAT0AAAAAABQA6P5BTWXM3GAO7YG6M4ZSYPQWNZQ)
 
 **Warping of Cards**
