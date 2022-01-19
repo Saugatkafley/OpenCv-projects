@@ -5,12 +5,6 @@ It is the collection of some projects that I have been learning from Murtaza's W
 
 
 
-## Authors
-
-- [@Saugatkafley](https://github.com/Saugatkafley/)
-
-
-
 ## Installation
 
 To clone  this project run
@@ -34,11 +28,6 @@ Install the required dependencies from the requirements.txt
 pip install -r requirements.txt
 ```
     
-## Feedback
-
-If you have any feedback, please reach out to us at saugatkafley@gmail.com
-
-
 ## Documentation
 
 [OpenCV](https://docs.opencv.org/4.x/d4/db1/tutorial_documentation.html)
@@ -46,7 +35,26 @@ If you have any feedback, please reach out to us at saugatkafley@gmail.com
 [Python](https://docs.python.org/3.9/)
 
 
-## Screenshots
+## Screenshots / Demos
 
-![App Screenshot](https://i.ibb.co/9hYhYKP/Cards.png)
+**Real Time Color** 
+![Color Detection](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/real_time_color.gif?token=GHSAT0AAAAAABQA6P5BTWXM3GAO7YG6M4ZSYPQWNZQ)
+
+**Warping of Cards**
+![Warped Cards](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/Warped_cards.png?token=GHSAT0AAAAAABQA6P5ACQ2MIO5XWHSFCYDQYPQWWLA)
+
+**Warping Based on Clicks on the image**
+![Warping Based on Clicks on the image](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/detect_clicks.png?token=GHSAT0AAAAAABQA6P5A2JPG7DNS7L3BVMWUYPQWYRA)
+
+**Tracking Objects by selecting Region Of Interest (ROI)**
+![ROI](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/tracking.gif?token=GHSAT0AAAAAABQA6P5BKET3EO3VYETQNHEWYPQXA3Q)
+
+## Authors
+
+- [@Saugatkafley](https://github.com/Saugatkafley/)
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at saugatkafley@gmail.com
 
