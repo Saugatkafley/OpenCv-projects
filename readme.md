@@ -58,5 +58,6 @@ pip install -r requirements.txt
 
 ## Feedback
 
-If you have any feedback, please reach out to us at saugatkafley@gmail.com
+If you have any feedback, please reach out to me at saugatkafley@gmail.com
+Dont forget to Star this repository if it seemed nice and felt it might help to learn basics of OpenCV !
 
