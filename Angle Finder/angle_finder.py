@@ -8,6 +8,9 @@ img  = cv2.imread(path_img)
 pointsList = []
 def mousePoints(event, x,y, flags , params):
     if event == cv2.EVENT_LBUTTONDOWN: 
+        size = len(pointsList) 
+        if size !=0 and (size%3) != 0:
+            cv2.line(img ,tuple(pointsList[round(((size-1)/3)*3)]) , (x,y), (0,255,0), 2)
         pointsList.append([x,y])
         cv2.circle(img, (x,y), 7, (0,255,0), -1)
         print(pointsList)
