@@ -38,6 +38,7 @@ pip install -r requirements.txt
 ## Screenshots / Demos
 
 **Real Time Color** 
+
 ![Color Detection](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/real_time_color.gif?token=GHSAT0AAAAAABQA6P5BTWXM3GAO7YG6M4ZSYPQWNZQ)
 
 **Warping of Cards**
@@ -47,6 +48,7 @@ pip install -r requirements.txt
 ![Warping Based on Clicks on the image](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/detect_clicks.png?token=GHSAT0AAAAAABQA6P5A2JPG7DNS7L3BVMWUYPQWYRA)
 
 **Tracking Objects by selecting Region Of Interest (ROI)**
+
 ![ROI](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/tracking.gif?token=GHSAT0AAAAAABQA6P5BKET3EO3VYETQNHEWYPQXA3Q)
 
 ## Authors
@@ -56,5 +58,6 @@ pip install -r requirements.txt
 
 ## Feedback
 
-If you have any feedback, please reach out to us at saugatkafley@gmail.com
+If you have any feedback, please reach out to me at saugatkafley@gmail.com
+Dont forget to Star this repository if it seemed nice and felt it might help to learn basics of OpenCV !
 
