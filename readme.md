@@ -21,7 +21,7 @@ To activate the virtual env on Linux machines
 ```
 On powershell
 ```powershell
-    venv\bin\activate.ps1
+    venv\Scripts\activate.ps1
 ```
 Install the required dependencies from the requirements.txt
 ```
