@@ -34,7 +34,6 @@ pip install -r requirements.txt
 
 [Python](https://docs.python.org/3.9/)
 
-
 ## Screenshots / Demos
 
 **Real Time Color** 
@@ -51,13 +50,15 @@ pip install -r requirements.txt
 
 ![ROI](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/main/Screenshots/tracking.gif?token=GHSAT0AAAAAABQA6P5BKET3EO3VYETQNHEWYPQXA3Q)
 
+**Angle Finder**
+
+![Angle Finder](https://raw.githubusercontent.com/Saugatkafley/OpenCv-projects/26d147c58a9a8218527c6574334c3ab200ca6325/Screenshots/angle_finder.gif?token=AMPQIMKECR3BS3I6XJYJVHTB5TXBW)
 ## Authors
 
 - [@Saugatkafley](https://github.com/Saugatkafley/)
 
-
 ## Feedback
 
 If you have any feedback, please reach out to me at saugatkafley@gmail.com
-Dont forget to Star this repository if it seemed nice and felt it might help to learn basics of OpenCV !
 
+Dont forget to Star this repository if it seemed nice and felt it might help to learn basics of OpenCV !
