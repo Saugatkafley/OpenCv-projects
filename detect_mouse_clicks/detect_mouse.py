@@ -44,5 +44,5 @@ while True :
     cv2.imshow("Original", img)
     cv2.setMouseCallback("Original", MousePoints)
 
-    if cv2.waitKey(0) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'):
             break 

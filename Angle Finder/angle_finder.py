@@ -2,7 +2,7 @@ from cmath import atan
 import cv2
 import numpy as np
 import math
-path_img = "Resources/cards.png"
+path_img = "Resources/shape2.png"
 img  = cv2.imread(path_img)
 
 pointsList = []
@@ -43,5 +43,5 @@ while True:
             img  = cv2.imread(path_img)
     else:
         break
-    if cv2.waitKey(1) &  0xFF == ord('b'):
+    if cv2.waitKey(1) &  0xFF == ord('q'):
         break
